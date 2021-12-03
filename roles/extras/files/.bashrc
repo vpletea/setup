@@ -5,7 +5,7 @@ context(){
 }
 
 #Get current git branch
-branch() {
+branch() { 
   current_branch=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
   if [[ $? -eq 0 ]] ; then echo -e " git:${current_branch}"; fi
 }
@@ -17,7 +17,7 @@ eval "$(dircolors -b)"
 #Set aliases
 alias ls='ls $LS_OPTIONS'
 alias ll='ls -alF'
-alias kc='k3d cluster create dev -p 80:80@loadbalancer -p 443:443@loadbalancer  --k3s-server-arg "--no-deploy=traefik" --volume /etc/hosts:/etc/hosts'
+alias kc='k3d cluster create dev  -p 80:80@loadbalancer -p 443:443@loadbalancer --k3s-arg "--disable=traefik@server:0" --volume /etc/hosts:/etc/hosts'
 alias kd='k3d cluster delete dev'
 alias ku='wget -q -O - https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash'
 
@@ -40,11 +40,6 @@ fi
 if [ $(id -u) -eq 0 ];
 then
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(context)\$(branch)\n\[\033[00m\]# "
-else
+else 
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(context)\$(branch)\n\[\033[00m\]$ "
 fi
-cd ~
-
-export PATH=$PATH:/home/valentin/bin
-
-source '/home/valentin/lib/azure-cli/az.completion'
