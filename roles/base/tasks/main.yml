@@ -58,7 +58,6 @@
       - ca-certificates
       - curl
       - lsb-release
-      - tlp
       - wine
       - code
       - dos2unix
