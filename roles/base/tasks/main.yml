@@ -64,6 +64,7 @@
       - google-chrome-stable
       - sshpass
       - yubioath-desktop
+      - tlp
     update_cache: yes
 - name: Enable the firewall
   ufw:
