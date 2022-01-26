@@ -12,7 +12,6 @@
     - base
     - devops
     - extras
-    - tlp
     
 # Setup bash prompt for regular user    
 - hosts: localhost
