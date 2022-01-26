@@ -71,3 +71,9 @@
     state: enabled
 - name: Upgrade all  apt packages
   apt: upgrade=dist force_apt_get=yes
+- name: Enable tlp and start
+  ansible.builtin.service:
+    name: tlp
+    enabled: yes
+    state: started
+    
