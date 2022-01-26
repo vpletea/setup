@@ -2,7 +2,7 @@
 
 * Clone the repo: git clone https://github.com/vpletea/setup.git && cd setup
 * Install ansible: make ansible
-* Configure the workstation: make workstation
+* Configure the workstation: make setup
 
 # K3d cluster with docker local registry ( no traefik )
 
