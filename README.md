@@ -6,7 +6,7 @@
 
 # K3d cluster with docker local registry ( no traefik )
 
-    k3d cluster create --registry-config "registries.yaml" -p 80:80@loadbalancer -p 443:443@loadbalancer  --k3s-server-arg "--no-deploy=traefik"
+    kc
     docker container run -d --name registry.localhost --restart always -p 5000:5000 registry:2
     docker network connect k3d-k3s-default registry.localhost
 
